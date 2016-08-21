@@ -1,7 +1,6 @@
 package models;
 
 import com.avaje.ebean.Model;
-import org.bouncycastle.crypto.generators.SCrypt;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.persistence.*;
@@ -49,6 +48,10 @@ public class User extends Model {
             return user;
         }
         return null;
+    }
+    public User(String email, String password){
+        this.email=email;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }
 
