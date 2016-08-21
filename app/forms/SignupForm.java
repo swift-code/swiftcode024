@@ -27,7 +27,7 @@ public class SignupForm {
         List<ValidationError> errors = new ArrayList<>();
         User user = User.find.where().eq("email",email).findUnique();
         if(user != null){
-            errors.add(new ValidationError("message","Email already signedup"));
+            errors.add(new ValidationError("message","Email already signed up"));
             errors.add(new ValidationError("error","true"));
         }
         return errors;
