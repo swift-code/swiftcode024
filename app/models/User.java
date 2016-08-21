@@ -54,5 +54,3 @@ public class User extends Model {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }
-
-
